@@ -30,6 +30,9 @@ const LoggedInNav = props => {
         <li>
           <Link className={"nav-link"} to={"/create-auction/"}>Create Auction</Link>
         </li>
+        <li>
+          <Link className={"nav-link"} to={"/messages/"}>Messages</Link>
+        </li>
         <li onClick={logOut}>
           <a>Log Out</a>
         </li>

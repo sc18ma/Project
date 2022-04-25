@@ -1,7 +1,7 @@
 from django.urls import path
 from rest_framework_simplejwt import views as jwt_views
 
-from .views import get_user, CreateUser, BlacklistRefreshToken, CreateAuction, AuctionListView, AuctionDetailsView, MakeBid
+from .views import get_user, CreateUser, BlacklistRefreshToken, CreateAuction, AuctionListView, AuctionDetailsView, MakeBid, MessageView
 
 urlpatterns = [
     path('get_user/', get_user),
@@ -13,4 +13,5 @@ urlpatterns = [
     path('search/auction/', AuctionListView.as_view(), name='search_auction'),
     path('get_auction/', AuctionDetailsView.as_view(), name='get_auction'),
     path('create/bid/', MakeBid.as_view(), name="make_bid"),
+    path('get_messages/', MessageView.as_view(), name="get_messages"),
 ]

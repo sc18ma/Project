@@ -19,3 +19,14 @@ class Bid(models.Model):
     bidder = models.ForeignKey(User, on_delete=models.CASCADE)
     bid = models.DecimalField(decimal_places=2, max_digits=10)
     pub_date = models.DateTimeField('date published')
+
+class Result(models.Model):
+    item = models.CharField(max_length=200)
+    creator = models.ForeignKey(User, related_name='creator', on_delete=models.CASCADE)
+    winner = models.ForeignKey(User, related_name='winner', on_delete=models.CASCADE, blank=True, null=True, default=None)
+    price = models.DecimalField(decimal_places=2, max_digits=10)
+    sold = models.BooleanField()
+
+class Message(models.Model):
+    receiver = models.ForeignKey(User, on_delete=models.CASCADE)
+    message = models.TextField()

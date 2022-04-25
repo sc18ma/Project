@@ -7,7 +7,7 @@ from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from django.utils import timezone
 
-from .models import Auction, Bid
+from .models import Auction, Bid, Message
 
 User = get_user_model()
 
@@ -82,3 +82,8 @@ class AuctionDetailsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Auction
         fields = ('id', 'item', 'description', 'created_by', 'starting_price', 'duration', 'highest_bid')
+
+class MessageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Message
+        fields = ('id', 'message')

@@ -219,3 +219,19 @@ nav li a:hover{
   width: 70%;
   align-items: flex-start;
 }
+
+.message-list{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.message{
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  list-style-type: none;
+  padding: 20px 20px 20px 20px;
+  gap: 20px;
+  border-bottom: 1px solid #000000;
+}

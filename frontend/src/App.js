@@ -10,6 +10,7 @@ import LoggedOutNav from "./components/loggedOutNav";
 import LoggedInNav from "./components/loggedInNav";
 import Auction from "./components/auction";
 import CreateAuction from "./components/createAuction";
+import Messages from "./components/messages";
 
 import tokenRefresh from "./functions/tokenRefresh";
 
@@ -83,6 +84,7 @@ const App = () => {
           <Route path="/signup/" element={<Signup />}/>
           <Route path="/auction/" element={<Auction loggedIn={loggedIn} />}/>
           <Route path="/create-auction/" element={<CreateAuction loggedIn={loggedIn} userId={user.id} />}/>
+          <Route path="/messages/" element={<Messages loggedIn={loggedIn} userId={user.id} />}/>
           <Route path="*" element={<Home loggedIn={loggedIn} user={user} />}/>
         </Routes>
       </main>
