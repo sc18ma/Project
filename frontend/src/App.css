@@ -1,0 +1,221 @@
+
+body {
+  background-color: #454545;
+  color: #ffffff;
+  font-family: Verdana, sans-serif;
+  font-size: 30px;
+}
+
+
+nav {
+  display: flex;
+  background-color: #1f1f1f;
+  line-height: 5rem;
+  height: 5rem;
+  padding: 0;
+}
+
+nav li{
+  list-style: none;
+}
+
+
+nav li a{
+  float: left;
+  vertical-align: middle;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #c2c2c2;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+nav li a:hover{
+  background-color: #454545;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 15px;
+  padding: 30px;
+  gap: 10px;
+  background-color: #787878;
+  border-radius: 5px;
+}
+
+.content h1{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.form-content input{
+  display: block;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  margin: 8px 0;
+  max-width: 30%;
+  min-width: 400px;
+  width: 100%;
+  border-radius: 8px;
+  color: black;
+  font-size: 1.5rem;
+}
+
+.form-content input[type=text], input[type=password], input[type=email]{
+  border: 1px solid black;
+  background: white;
+}
+
+.form-content input[type=submit]{
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  background: #56cf38;
+}
+
+.form-content textarea{
+  display: block;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  margin: 8px 0;
+  max-width: 50%;
+  min-width: 400px;
+  width: 100%;
+  border-radius: 8px;
+  color: black;
+  font-size: 1.5rem;
+  border: 1px solid black;
+  background: white;
+  resize: none;
+}
+
+.form-content select{
+  display: block;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  margin: 8px 0;
+  max-width: 30%;
+  min-width: 400px;
+  width: 100%;
+  border-radius: 8px;
+  color: black;
+  font-size: 1.5rem;
+  border: 1px solid black;
+  background: white;
+}
+
+.center{
+  width: 100%;
+  padding: 8rem 10px 4rem;
+}
+
+.search-bar{
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  border-radius: calc(0.5 * 100px);
+  justify-content: center;
+}
+
+.search-input{
+  box-sizing: border-box;
+  padding-right: 5px;
+  padding-left: 10px;
+  width: 50%;
+  border-radius: 100px 0 0 100px;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.search-submit{
+  padding-right: 20px;
+  padding-left: 10px;
+  background: white;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 0 100px 100px 0;
+  margin-right: 10px;
+}
+
+.search-input, .search-submit{
+  height: 65px;
+  outline: none;
+  border: none;
+}
+
+.query-list{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.query-item{
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 2rem;
+  list-style-type: none;
+  padding: 20px 20px 20px 20px;
+  gap: 20px;
+  border-bottom: 1px solid #000000;
+}
+
+.query-item:hover{
+  background-color: #454545;
+}
+
+.bid-window{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  width: 25%;
+  max-width: 30rem;
+  min-width: 22rem;
+  padding-bottom: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+}
+
+.bid-form{
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.bid-input{
+  box-sizing: border-box;
+  height: 2rem;
+  width: 50%;
+  outline: none;
+  border: 1px solid black;
+}
+
+.bid-submit{
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 2rem;
+  outline: none;
+  background: #56cf38;
+  border: none;
+  border-radius: 5px;
+}
+
+.warning{
+  color: red;
+}
+
+.description{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 70%;
+  align-items: flex-start;
+}
