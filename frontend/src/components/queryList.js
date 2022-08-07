@@ -39,14 +39,23 @@ const QueryList = () => {
   return (
     <div className="query-list">
       {queryParams.get('search') ?
-        <ul>
-          {queryResults.auctions.map(queryItem => (
-            <QueryItem
-              key={queryItem.id}
-              queryItem={queryItem}
-            />
-          ))}
-        </ul>
+        <table>
+          <thead>
+            <tr className="query-header">
+              <th>Image</th>
+              <th className="mid-col">Name</th>
+              <th>Current Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {queryResults.auctions.map(queryItem => (
+              <QueryItem
+                key={queryItem.id}
+                queryItem={queryItem}
+              />
+            ))}
+          </tbody>
+        </table>
       : null
       }
     </div>

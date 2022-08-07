@@ -29,6 +29,7 @@ const Auction = props => {
         setAuction({
           id: data.id,
           item: data.item,
+          image: data.image,
           description: data.description,
           created_by: data.created_by,
           starting_price: data.starting_price,
@@ -39,6 +40,7 @@ const Auction = props => {
         setAuction({
           id: data.id,
           item: data.item,
+          image: data.image,
           description: data.description,
           created_by: data.created_by,
           starting_price: data.starting_price,
@@ -106,9 +108,15 @@ const Auction = props => {
     <div className="content">
       <h1>{ auction.item }</h1>
 
-      <div className="description">
-        Description:
-        <p>{ auction.description }</p>
+      <div className="left">
+        <div className="auctionImage">
+          <img src={ `http://localhost:8000${auction.image}` } />
+        </div>
+
+        <div className="description">
+          Description:
+          <p>{ auction.description }</p>
+        </div>
       </div>
 
       <div className="bid-window">

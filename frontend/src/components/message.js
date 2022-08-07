@@ -8,9 +8,9 @@ const Message = (props) => {
 
 
   return (
-    <li className="message">
-        {message}
-    </li>
+    <tr className="message">
+        <td>{message}</td>
+    </tr>
   )
 
 }

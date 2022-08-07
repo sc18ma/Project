@@ -4,6 +4,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework.parsers import MultiPartParser, FormParser
 
 from .models import Auction, Message
 from .serializers import UserSerializer, UserCreateSerializer, AuctionSerializer, AuctionDetailsSerializer, BidSerializer, MessageSerializer
@@ -46,10 +47,12 @@ class BlacklistRefreshToken(APIView):
 
 # Creates a new auction
 class CreateAuction(APIView):
+    parser_classes = (MultiPartParser, FormParser)
+
     permission_classes = (permissions.AllowAny,)
     authentication_classes = ()
 
-    def post(self, request, format='json'):
+    def post(self, request, *args, **kwargs):
         serializer = AuctionSerializer(data = request.data)
         if serializer.is_valid():
             auction = serializer.save()

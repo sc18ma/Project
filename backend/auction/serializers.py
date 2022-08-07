@@ -42,6 +42,7 @@ class UserCreateSerializer(serializers.ModelSerializer):
 # Used for creating new Auctions
 class AuctionSerializer(serializers.ModelSerializer):
     item = serializers.CharField(max_length=200)
+    image = serializers.ImageField()
     description = serializers.CharField()
     created_by = serializers.PrimaryKeyRelatedField(read_only=False, queryset=User.objects.all())
     starting_price = serializers.DecimalField(decimal_places=2, max_digits=10, default=0)
@@ -49,7 +50,7 @@ class AuctionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Auction
-        fields = ('item', 'description', 'created_by', 'starting_price', 'duration')
+        fields = ('item', 'image', 'description', 'created_by', 'starting_price', 'duration')
 
     def create(self, validated_data):
         validated_data.update({"pub_date": timezone.now()})
@@ -81,7 +82,7 @@ class AuctionDetailsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Auction
-        fields = ('id', 'item', 'description', 'created_by', 'starting_price', 'duration', 'highest_bid')
+        fields = ('id', 'image', 'item', 'description', 'created_by', 'starting_price', 'duration', 'highest_bid')
 
 class MessageSerializer(serializers.ModelSerializer):
     class Meta:

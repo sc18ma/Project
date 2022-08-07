@@ -44,14 +44,14 @@ const Messages = props => {
   return (
     <div className="content">
       <h1>Messages</h1>
-      <ul className="message-list">
+      <table className="message-list">
         {messages.map(message => (
           <Message
             key={message.id}
             message={message}
           />
         ))}
-      </ul>
+      </table>
     </div>
   )
 

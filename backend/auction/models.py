@@ -7,6 +7,7 @@ User = get_user_model()
 
 class Auction(models.Model):
     item = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='post_images', null=True)
     description = models.TextField()
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
     starting_price = models.DecimalField(decimal_places=2, max_digits=10, default=0)

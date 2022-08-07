@@ -156,6 +156,17 @@ nav li a:hover{
   width: 80%;
 }
 
+.query-header{
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  list-style-type: none;
+  padding: 20px 20px 20px 20px;
+  gap: 20px;
+  border-bottom: 1px solid #000000;
+  background-color: #1f1f1f;
+}
+
 .query-item{
   display: flex;
   justify-content: space-between;
@@ -180,8 +191,10 @@ nav li a:hover{
   max-width: 30rem;
   min-width: 22rem;
   padding-bottom: 10px;
-  border: 1px solid #ffffff;
+  border: 1px solid black;
   border-radius: 5px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .bid-form{
@@ -212,12 +225,28 @@ nav li a:hover{
   color: red;
 }
 
+.auctionImage {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 500px;
+}
+
 .description{
   display: flex;
+  margin-top: 20px;
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 10px;
   flex-wrap: wrap;
   flex-direction: column;
-  width: 70%;
   align-items: flex-start;
+}
+
+.left {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
 }
 
 .message-list{
@@ -234,4 +263,24 @@ nav li a:hover{
   padding: 20px 20px 20px 20px;
   gap: 20px;
   border-bottom: 1px solid #000000;
+}
+
+th {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td {
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mid-col {
+  width: 40%;
+}
+
+td img {
+  max-height: 100%;
+  max-width: 100%;
 }

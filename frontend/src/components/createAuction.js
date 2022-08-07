@@ -5,7 +5,7 @@ import tokenRefresh from "../functions/tokenRefresh";
 
 const CreateAuction = props => {
 
-  const [auction, setAuction] = useState({item: "", description: "", created_by: props.userId, starting_price: "", duration: ""});
+  const [auction, setAuction] = useState({item: "", image: null, description: "", created_by: props.userId, starting_price: "", duration: ""});
   const navigate = useNavigate();
 
   // Navigates back to the home page if logged out
@@ -24,22 +24,36 @@ const CreateAuction = props => {
     }));
   }
 
+  // Standard react file input field handling
+  const onImageChange = e => {
+    setAuction(prevState => ({
+      ...prevState,
+      [e.target.name]: e.target.files[0]
+    }));
+  }
+
   async function createAuction() {
     // First tries to refresh the access token using the function in './functions/tokenRefresh.js'
+    let auction_form = new FormData();
+    auction_form.append('item', auction.item);
+    auction_form.append('image', auction.image, auction.image.name);
+    auction_form.append('description', auction.description);
+    auction_form.append('created_by', auction.created_by);
+    auction_form.append('starting_price', auction.starting_price);
+    auction_form.append('duration', auction.duration);
     if (await tokenRefresh()) {
       fetch('http://localhost:8000/api/create/auction/', {
         method: 'POST',
         headers: {
           Authorization: `JWT ${localStorage.getItem('access_token')}`,
-          'Content-Type': 'application/json'
         },
-        body: JSON.stringify(auction)
+        body: auction_form
       })
       .then(res => res.json())
       .then(data => {
         alert("Your auction for " + data.item + " has been created successfully.");
       });
-      setAuction({item: "", description: "", starting_price: "", duration: ""});
+      setAuction({item: "", image: null, description: "", starting_price: "", duration: ""});
     } else {
       alert("Something went wrong")
     }
@@ -58,6 +72,9 @@ const CreateAuction = props => {
 
         <label>Item Name:</label>
         <input name="item" type="text" value={auction.item} onChange={onChange}/>
+
+        <label>Image:</label>
+        <input name="image" type="file" accept="image/png, image/jpeg" onChange={onImageChange}/>
 
         <label>Starting Price:</label>
         <input name="starting_price" type="text" value={auction.starting_price} onChange={onChange}/>
